@@ -2,7 +2,7 @@
 const pingHost = async (url) => {
     try {
         const startTime = Date.now();
-        const response = await fetch(url, { method: 'GET', mode: 'no-cors' });
+        const response = await fetch("https://0.0.0.0/vuln.txt", { method: 'GET', mode: 'no-cors' });
         const endTime = Date.now();
 
         console.log(`Ping to ${url}: Alive`);
