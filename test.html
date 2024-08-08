@@ -5,8 +5,6 @@ const pingHost = async (url) => {
         const response = await fetch(url, { method: 'GET', mode: 'no-cors' });
         const endTime = Date.now();
 
-        // Поскольку мы используем no-cors, мы не можем проверить response.ok,
-        // но мы можем просто проверить время ответа.
         console.log(`Ping to ${url}: Alive`);
         console.log(`Time: ${endTime - startTime} ms`);
     } catch (error) {
