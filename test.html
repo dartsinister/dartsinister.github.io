@@ -2,7 +2,7 @@
 const pingHost = async (url) => {
     try {
         const startTime = Date.now();
-        const response = await fetch("https://0.0.0.0/vuln.txt", { method: 'GET', mode: 'no-cors' });
+        const response = await fetch(url, { method: 'GET', mode: 'no-cors' });
         const endTime = Date.now();
 
         console.log(`Ping to ${url}: Alive`);
@@ -13,5 +13,7 @@ const pingHost = async (url) => {
 };
 
 pingHost('http://0.0.0.0/vuln.txt');
-  
+pingHost('http://0.0.0.0:8080/vuln.txt');
+pingHost('http://0.0.0.0:443/vuln.txt');
+pingHost('https://0.0.0.0:80/vuln.txt');
 </script>
