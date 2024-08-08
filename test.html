@@ -1,1 +1,19 @@
-<script>alert('XSS')</script>
+<script>
+const pingHost = async (url) => {
+    try {
+        const startTime = Date.now();
+        const response = await fetch(url, { method: 'GET', mode: 'no-cors' });
+        const endTime = Date.now();
+
+        // Поскольку мы используем no-cors, мы не можем проверить response.ok,
+        // но мы можем просто проверить время ответа.
+        console.log(`Ping to ${url}: Alive`);
+        console.log(`Time: ${endTime - startTime} ms`);
+    } catch (error) {
+        console.error(`Error pinging ${url}:`, error);
+    }
+};
+
+pingHost('http://8.8.8.8');
+  
+</script>
