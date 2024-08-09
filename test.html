@@ -9,6 +9,9 @@ const pingHost = async (url) => {
         console.log(`Time: ${endTime - startTime} ms`);
         const text = await response.text();
         console.log("Response content:", text);
+        console.log("Response object:", response);
+        return response;
+        
     } catch (error) {
         console.error(`Error pinging ${url}:`, error);
     }
